@@ -5,7 +5,8 @@ import os
 import streamlit as st
 
 
-GOOGLE_API_KEY = api_key#os.getenv("api_key")
+GOOGLE_API_KEY = api_key
+#os.getenv("api_key")
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 
@@ -22,13 +23,15 @@ def main():
 
     st.write("This is a tool to help you generate Smart Contracts in the Cadence Language. You can use this tool to generate Smart Contracts from plain English text. ")
 
+    col1, col2 = st.columns(2)
 
-
-    query = st.text_input("Enter your query")
-    if st.button("Generate Smart Contract from Legal Agreement"):
-        with st.spinner("Please wait while we generate your response"):
-            response = generate_legal_contracts(query=query)
-            st.markdown(f"{response}", unsafe_allow_html=True)
+    with col1:
+        query = st.text_input("Enter your query")
+        if st.button("Generate Smart Contract from Legal Agreement"):
+            with st.spinner("Please wait while we generate your response"):
+                response = generate_legal_contracts(query=query)
+                with col2:
+                    st.markdown(f"{response}", unsafe_allow_html=True)
 
         
 
