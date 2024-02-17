@@ -1,11 +1,13 @@
+import nltk
+
+nltk.download('stopwords')
+
 
 from llama_index.llms.gemini import Gemini
 from llama_index.embeddings.gemini import GeminiEmbedding
 import os
 import streamlit as st
-import nltk
 
-nltk.download('stopwords')
 
 GOOGLE_API_KEY = os.getenv("api_key")
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
