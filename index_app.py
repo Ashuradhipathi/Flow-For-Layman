@@ -1,3 +1,7 @@
+import nltk
+
+nltk.download('stopwords',download_dir='.')
+
 
 import google.generativeai 
 from llama_index.llms.gemini import Gemini
