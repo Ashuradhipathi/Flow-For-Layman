@@ -1,6 +1,0 @@
-llama-index-embeddings-gemini
-llama-index-llms-gemini
-llama-index
-google-generativeai
-streamlit
-nltk
