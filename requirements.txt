@@ -3,3 +3,4 @@ google-generativeai
 llama-index-llms-gemini
 streamlit
 llama-index-embeddings-gemini
+nltk
