@@ -4,3 +4,5 @@ llama-index
 google-generativeai
 streamlit
 streamlit_ace
+pinatapy-vourhey
+flow-py-sdk
