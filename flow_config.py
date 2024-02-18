@@ -73,47 +73,7 @@ async def deploy_contract(acc_name,contract):
     print("Transaction ID: ", result.id.hex())
     return result.id.hex()
 
-test_file='''
-pub contract AshishPremExchange {
 
-    // State variables
-    pub var ashishBalance: Int
-    pub var premBalance: Int
-
-    // Constructor
-    init() {
-        self.ashishBalance = 1000
-        self.premBalance = 1000
-    }
-
-    // Function to exchange USD for INR
-    pub fun exchangeUSDforINRs(amount: Int) {
-        // Check if Ashish has enough USD
-        if self.ashishBalance < amount {
-            log("Ashish does not have enough USD")
-        }
-
-        // Deduct the amount from Ashish's balance
-        self.ashishBalance = self.ashishBalance - amount
-
-        // Add the equivalent amount of INR to prem's balance
-        self.premBalance = self.premBalance + amount * 75
-    }
-
-    // Function to exchange INR for USD
-    pub fun exchangeINRsforUSDs(amount: Int) {
-        // Check if prem has enough INR
-        if self.premBalance < amount {
-            log("prem does not have enough INR")
-        }
-
-        // Deduct the amount from prem's balance
-        self.premBalance = self.premBalance + amount
-
-        // Add the equivalent amount of USD to Ashish's balance
-        self.ashishBalance = self.ashishBalance - amount / 75 
-    }
-}'''
 # test_contract = {
 #     "name": "IP_NFT",
 #     "source": open("./flow/cadence/contracts/IP_NFT.cdc").read()
