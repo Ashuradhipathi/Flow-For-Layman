@@ -87,6 +87,7 @@ class MintNFT():
                 transaction.proposal_key.address.hex()
             )
         )
+        return transaction_id.hex()
             
 
 
