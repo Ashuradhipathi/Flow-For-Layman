@@ -35,7 +35,7 @@ def nft_data(acc_address, acc_name, id):
     data = asyncio.run(MetaDataClass.run(ctx = Config(config_path, acc_name)))
     return data
 
-def all_nfts(acc_address, acc_name):
+def all_nfts(acc_address=acc_address, acc_name=acc_name):
     RetrieveNFTClass = RetrieveAllNFTs(acc_address)
     ids = asyncio.run(RetrieveNFTClass.run(ctx = Config(config_path, acc_name)))
     all_data = {}
