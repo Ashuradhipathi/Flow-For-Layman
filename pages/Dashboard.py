@@ -5,9 +5,6 @@ from streamlit_extras.switch_page_button import switch_page
 if "currentdata" not in st.session_state:
     st.session_state["currentdata"]={}
 def embed_iframe(url):
-    # if not re.match(r"https?://(?:[a-zA-Z0-9-\.]+\.)+[a-zA-Z]{2,6}(?:/[^\s]*)?", url):
-    #     return f"Invalid URL: {url}"
-
     iframe_html = f"""
     <iframe src="{url}" style="width: 100%; height: 300px;"></iframe>
     """
@@ -39,10 +36,3 @@ for nft in nft_data:
         if st.button('Preview', key=f'edit_button{i}'):
             st.session_state["currentdata"]=nft
             switch_page("view")
-            # Handle button click (replace with your desired functionality)
-                # Move to the preview container below the grid
-            with preview_container:
-                    # Clear the container before embedding iframe
-                preview_container.empty()
-                
-                st.write(embed_iframe(f"https://ipfs.io/ipfs/{lin}"))  # Embed iframe on button click
