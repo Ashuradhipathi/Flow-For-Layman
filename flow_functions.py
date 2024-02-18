@@ -28,6 +28,7 @@ def mint_file(uploaded_file, description, type, acc_address, receiver_address,  
     
     asyncio.run(MintClass.run(ctx = Config(config_path, acc_name)))
     print("NFT minted successfully!")
+    return [transaction_id,ipfs_link]
 
 def nft_data(acc_address, acc_name, id):
     MetaDataClass = RetrieveMetadata(acc_address, id)
