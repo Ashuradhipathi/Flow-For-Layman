@@ -6,3 +6,4 @@ streamlit
 streamlit_ace
 pinatapy-vourhey
 flow-py-sdk
+IPython
