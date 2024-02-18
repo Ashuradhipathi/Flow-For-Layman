@@ -44,7 +44,7 @@ for i, row in df.iterrows():
         st.markdown(link_text, unsafe_allow_html=True)  # Display link with formatting
 
     with grid[3]:
-        if st.button('Display and Edit', key=f'edit_button{i}'):
+        if st.button('Preview', key=f'edit_button{i}'):
             # Handle button click (replace with your desired functionality)
             if row['URL'] == 'invalid_url':
                 st.error("Invalid URL entered")
