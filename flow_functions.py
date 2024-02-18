@@ -10,7 +10,7 @@ acc_address = "0x429b022e4a4860c5"
 # Flow config path
 config_path = "./flow/flow.json"
 
-def mint_file(uploaded_file, description, type, acc_address, receiver_address,  acc_name):
+def mint_file(uploaded_file, description="This is a test file", type="Patent", acc_address="0x429b022e4a4860c5", receiver_address="0x429b022e4a4860c5",  acc_name=acc_name):
     ipfs_hash, ipfs_link = ipfs_upload(uploaded_file)
     
     data = {
@@ -26,7 +26,7 @@ def mint_file(uploaded_file, description, type, acc_address, receiver_address,  
     # Replace with streamlit spinner?
     print("Minting NFT...")
     
-    asyncio.run(MintClass.run(ctx = Config(config_path, acc_name)))
+    transaction_id = asyncio.run(MintClass.run(ctx = Config(config_path, acc_name)))
     print("NFT minted successfully!")
     return [transaction_id,ipfs_link]
 

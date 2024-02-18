@@ -9,11 +9,10 @@ def ipfs_upload(uploaded_file):
             with open(path, "wb") as f:
                     f.write(uploaded_file.getvalue())
     if path:
-        pinata = PinataPy("", "")
+        pinata = PinataPy(os.environ["PINATA_API_KEY"] , os.environ["PINATA_API_SECRET"] )
         print("path", path.replace(os.sep, '/'))
         result = pinata.pin_file_to_ipfs(path.replace(os.sep, '/'))
         print("File uploaded to IPFS succesfully!")
         print(result)
         os.remove(path)
         return (result['IpfsHash'], gateway+result['IpfsHash'])
-        
