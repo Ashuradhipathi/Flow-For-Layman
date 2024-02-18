@@ -4,7 +4,7 @@ from llama_index.embeddings.gemini import GeminiEmbedding
 import os
 import streamlit as st
 from streamlit_ace import st_ace
-from flow_config import deploy_contract, test_file
+from flow_config import deploy_contract
 import asyncio
 
 
