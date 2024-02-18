@@ -28,12 +28,13 @@ with image:
     uploaded_image = st.file_uploader("Upload Image", type=["jpg","png","jpeg"])
     if uploaded_image is not None:
         st.image(uploaded_image, caption='Uploaded Image.', use_column_width=True)
-        with st.spinner("Minting NFT.."):
-            transaction_id, ipfs_link =  mint_file(uploaded_image)
-        st.success("NFT minted successfully!")
-        st.markdown(f"## Visit your file stored in IPFS: [{ipfs_link}]({ipfs_link})")
-        st.markdown(f"*Transaction id*: ```{transaction_id}```")
-        st.markdown(f"## View Your Transaction on Flow Diver: [{transaction_id}](https://testnet.flowdiver.io/tx/{transaction_id})")
+        if st.button("Mint Image as NFT"):
+            with st.spinner("Minting NFT.."):
+                transaction_id, ipfs_link =  mint_file(uploaded_image)
+                st.success("NFT minted successfully!")
+                st.markdown(f"## Visit your file stored in IPFS: [{ipfs_link}]({ipfs_link})")
+                st.markdown(f"*Transaction id*: ```{transaction_id}```")
+                st.markdown(f"## View Your Transaction on Flow Diver: [{transaction_id}](https://testnet.flowdiver.io/tx/{transaction_id})")
 
 with text:
     st.write("Upload a document")
